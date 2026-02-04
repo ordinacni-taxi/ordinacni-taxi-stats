@@ -1,1 +1,121 @@
-# ordinacni-taxi-stats
+# Stárnutí populace ČR - Vizualizace pro Ordinační TAXI
+
+Interaktivní vizualizace demografických a zdravotních dat z ÚZIS ČR demonstrující rostoucí potřebu dopravních služeb pro seniory a osoby se zdravotními omezeními.
+
+## 🎯 Účel
+
+Tato aplikace prezentuje data podporující potřebu služby **Ordinační TAXI** - specializované dopravy pacientů k lékařským vyšetřením a ošetřením.
+
+## 📊 Klíčová data
+
+- **2,26 mil. seniorů 65+** (2025) → **3,08 mil.** (2050) - nárůst o **+36%**
+- **212 tis. velmi starých 85+** (2025) → **509 tis.** (2050) - nárůst o **+140%**
+- **194 tis. osob s demencí** (2024) → **488 tis.** (2050) - nárůst o **+151%**
+- **~338-451 tis. mobilitně omezených seniorů** (konzervativní odhad)
+
+## 🚀 Deployment na Vercel
+
+### 1. Nahrát na GitHub
+
+```bash
+git init
+git add .
+git commit -m "Initial commit - Ordinační TAXI statistics"
+git remote add origin https://github.com/YOUR_USERNAME/ordinacni-taxi-stats.git
+git push -u origin main
+```
+
+### 2. Propojit s Vercel
+
+1. Přejdi na [vercel.com](https://vercel.com)
+2. Klikni na "New Project"
+3. Importuj svůj GitHub repository
+4. Vercel automaticky detekuje Next.js
+5. Klikni na "Deploy"
+
+**Hotovo!** Aplikace bude dostupná na `https://your-project.vercel.app`
+
+## 💻 Lokální vývoj
+
+```bash
+# Instalace závislostí
+npm install
+
+# Spuštění dev serveru
+npm run dev
+
+# Build pro produkci
+npm run build
+
+# Preview produkční build
+npm start
+```
+
+Aplikace poběží na [http://localhost:3000](http://localhost:3000)
+
+## 🎨 Technologie
+
+- **Next.js 14** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Recharts** - Grafy a vizualizace
+- **Vercel** - Hosting a deployment
+
+## 📁 Struktura projektu
+
+```
+ordinacni-taxi-stats/
+├── app/
+│   ├── page.tsx          # Hlavní stránka s vizualizacemi
+│   ├── layout.tsx        # Layout komponenta
+│   └── globals.css       # Globální styly
+├── public/
+│   └── data.json         # UZIS data
+├── package.json
+├── next.config.js
+├── tsconfig.json
+└── tailwind.config.js
+```
+
+## 🔧 Customizace
+
+### Změna barev
+
+Upravte `tailwind.config.js`:
+
+```javascript
+colors: {
+  'ot-blue': '#2563eb',    // Primární barva
+  'ot-green': '#10b981',   // Sekundární barva
+  'ot-orange': '#f59e0b',  // Akcent
+}
+```
+
+### Změna fontů
+
+Upravte import v `app/globals.css` a `tailwind.config.js`
+
+### Aktualizace dat
+
+Nahraďte soubor `public/data.json` novými daty z UZIS
+
+## 📄 Zdroj dat
+
+**ÚZIS ČR** - Predikce potřeb zdravotní a sociální péče 2025
+
+Data obsahují:
+- Demografické predikce
+- Chronická onemocnění (demence, Alzheimer, diabetes, onkologie, srdeční selhání)
+- Polymorbiditu
+- Geriatrické pacienty
+- Osoby se zdravotním postižením
+
+## 🔗 Links
+
+- [Ordinační TAXI](https://ordinacnitaxi.cz)
+- [ÚZIS ČR](https://uzis.cz)
+- [Vercel Documentation](https://nextjs.org/docs)
+
+## 📝 Licence
+
+© 2025 Ordinační TAXI - Data z ÚZIS ČR
