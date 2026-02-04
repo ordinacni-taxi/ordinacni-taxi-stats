@@ -212,5 +212,90 @@
     "target_group_high_need_2024": 290579,
     "target_group_high_need_2050": 664027
   },
-  "regional_data": {}
+  "regional_data": [
+    {
+      "kraj": "Středočeský kraj",
+      "senioři_2025": 275321,
+      "senioři_2050": 455070,
+      "nárůst_procent": 65.3
+    },
+    {
+      "kraj": "Hl. m. Praha",
+      "senioři_2025": 257441,
+      "senioři_2050": 358425,
+      "nárůst_procent": 39.2
+    },
+    {
+      "kraj": "Moravskoslezský kraj",
+      "senioři_2025": 255082,
+      "senioři_2050": 317045,
+      "nárůst_procent": 24.3
+    },
+    {
+      "kraj": "Jihomoravský kraj",
+      "senioři_2025": 253648,
+      "senioři_2050": 345649,
+      "nárůst_procent": 36.3
+    },
+    {
+      "kraj": "Ústecký kraj",
+      "senioři_2025": 167864,
+      "senioři_2050": 217392,
+      "nárůst_procent": 29.5
+    },
+    {
+      "kraj": "Jihočeský kraj",
+      "senioři_2025": 142439,
+      "senioři_2050": 190099,
+      "nárůst_procent": 33.5
+    },
+    {
+      "kraj": "Olomoucký kraj",
+      "senioři_2025": 139104,
+      "senioři_2050": 178783,
+      "nárůst_procent": 28.5
+    },
+    {
+      "kraj": "Zlínský kraj",
+      "senioři_2025": 129336,
+      "senioři_2050": 166677,
+      "nárůst_procent": 28.9
+    },
+    {
+      "kraj": "Plzeňský kraj",
+      "senioři_2025": 127230,
+      "senioři_2050": 180060,
+      "nárůst_procent": 41.5
+    },
+    {
+      "kraj": "Královéhradecký kraj",
+      "senioři_2025": 126020,
+      "senioři_2050": 158819,
+      "nárůst_procent": 26.0
+    },
+    {
+      "kraj": "Pardubický kraj",
+      "senioři_2025": 112416,
+      "senioři_2050": 151254,
+      "nárůst_procent": 34.5
+    },
+    {
+      "kraj": "Kraj Vysočina",
+      "senioři_2025": 112286,
+      "senioři_2050": 150743,
+      "nárůst_procent": 34.2
+    },
+    {
+      "kraj": "Liberecký kraj",
+      "senioři_2025": 94452,
+      "senioři_2050": 126742,
+      "nárůst_procent": 34.2
+    },
+    {
+      "kraj": "Karlovarský kraj",
+      "senioři_2025": 63248,
+      "senioři_2050": 79049,
+      "nárůst_procent": 25.0
+    }
+  ]
 }

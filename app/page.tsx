@@ -24,6 +24,12 @@ interface DataType {
     description: string
   }
   key_statistics: Record<string, number>
+  regional_data?: Array<{
+    kraj: string
+    senioři_2025: number
+    senioři_2050: number
+    nárůst_procent: number
+  }>
 }
 
 const COLORS = ['#2563eb', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899']
@@ -217,6 +223,55 @@ export default function Home() {
             </BarChart>
           </ResponsiveContainer>
         </div>
+
+        {/* Regionální srovnání */}
+        {data.regional_data && (
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
+            <h2 className="text-3xl font-bold font-sora mb-2">📍 Senioři 65+ podle krajů</h2>
+            <p className="text-gray-600 mb-6">
+              Regionální rozložení seniorské populace ukazuje kde je největší potřeba dopravních služeb
+            </p>
+            <ResponsiveContainer width="100%" height={500}>
+              <BarChart 
+                data={data.regional_data} 
+                layout="vertical"
+                margin={{ top: 5, right: 30, left: 120, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis type="number" />
+                <YAxis dataKey="kraj" type="category" width={110} />
+                <Tooltip 
+                  formatter={(value: number) => value.toLocaleString('cs-CZ')}
+                  labelFormatter={(label) => `Kraj: ${label}`}
+                />
+                <Legend />
+                <Bar dataKey="senioři_2025" fill="#2563eb" name="2025" />
+                <Bar dataKey="senioři_2050" fill="#10b981" name="2050" />
+              </BarChart>
+            </ResponsiveContainer>
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="font-semibold text-blue-900 mb-1">Největší počet (2025)</div>
+                <div className="text-blue-700">
+                  {data.regional_data[0]?.kraj}: {data.regional_data[0]?.senioři_2025.toLocaleString('cs-CZ')}
+                </div>
+              </div>
+              <div className="bg-green-50 p-4 rounded-lg">
+                <div className="font-semibold text-green-900 mb-1">Největší nárůst</div>
+                <div className="text-green-700">
+                  {[...data.regional_data].sort((a, b) => b.nárůst_procent - a.nárůst_procent)[0]?.kraj}: 
+                  {' '}+{[...data.regional_data].sort((a, b) => b.nárůst_procent - a.nárůst_procent)[0]?.nárůst_procent}%
+                </div>
+              </div>
+              <div className="bg-orange-50 p-4 rounded-lg">
+                <div className="font-semibold text-orange-900 mb-1">Celkem ČR (2025)</div>
+                <div className="text-orange-700">
+                  {data.regional_data.reduce((sum, r) => sum + r.senioři_2025, 0).toLocaleString('cs-CZ')}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Cílová skupina */}
         <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
